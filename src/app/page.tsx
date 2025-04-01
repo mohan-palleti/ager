@@ -3,6 +3,7 @@
 import { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { calculateLifeStats, calculateLifeStatsFromAge, getRandomQuote, AVERAGE_LIFE_EXPECTANCY } from '@/utils/calculations';
+import { useRouter } from 'next/navigation';
 
 interface LifeStats {
   age: number;
@@ -25,6 +26,7 @@ interface StoredData {
 }
 
 export default function Home() {
+  const router = useRouter();
   const [inputType, setInputType] = useState<'date' | 'age'>('date');
   const [birthDate, setBirthDate] = useState<string>('');
   const [age, setAge] = useState<string>('');
@@ -78,6 +80,7 @@ export default function Home() {
     
     setStats(lifeStats);
     setQuote(getRandomQuote());
+    router.push('/results');
   };
 
   const handleReset = () => {
