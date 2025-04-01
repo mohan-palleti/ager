@@ -111,6 +111,9 @@ export default function Home() {
           <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
             Discover your life journey and remaining time
           </p>
+          <p className="text-sm sm:text-base text-gray-500 dark:text-gray-400 italic">
+            *Based on average life expectancy of 72 years
+          </p>
         </motion.div>
 
         <motion.form
