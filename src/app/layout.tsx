@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import ThemeToggle from "@/components/ThemeToggle";
+import { Analytics } from "@vercel/analytics/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,6 +28,7 @@ export default function RootLayout({
         <div className="min-h-screen bg-white dark:bg-gray-900 text-gray-900 dark:text-white">
           <ThemeToggle />
           {children}
+          <Analytics />
         </div>
       </body>
     </html>
