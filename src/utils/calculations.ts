@@ -14,6 +14,7 @@ export const lifeQuotes = [
   "Life is either a daring adventure or nothing at all.",
   "The only way to do great work is to love what you do.",
   "Life is a journey, not a destination.",
+  "You only live once, make everyday count",
   "The purpose of life is to discover your gift. The meaning of life is to give it away.",
 ];
 

@@ -98,24 +98,24 @@ export default function Home() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-br from-purple-50 to-pink-50 py-12 px-4 sm:px-6 lg:px-8">
+    <main className="min-h-screen bg-gradient-to-br from-yellow-50 to-orange-50 dark:from-gray-900 dark:to-gray-800 py-6 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-3xl mx-auto">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}
-          className="text-center mb-12"
+          className="text-center mb-6 sm:mb-12"
         >
-          <h1 className="text-4xl font-bold text-gray-900 mb-4">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-2 sm:mb-4">
             Ager
           </h1>
-          <p className="text-xl text-gray-600">
+          <p className="text-base sm:text-lg md:text-xl text-gray-600 dark:text-gray-300">
             Discover your life journey and remaining time
           </p>
         </motion.div>
 
         <motion.form
           onSubmit={handleSubmit}
-          className="bg-white rounded-lg shadow-xl p-6 mb-8"
+          className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4 sm:p-6 md:p-8 mb-6 sm:mb-8"
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
         >
@@ -126,8 +126,8 @@ export default function Home() {
                 onClick={() => setInputType('date')}
                 className={`px-4 py-2 rounded-md transition-colors duration-200 ${
                   inputType === 'date'
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-yellow-500 dark:bg-yellow-400 text-white'
+                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
                 Date of Birth
@@ -137,8 +137,8 @@ export default function Home() {
                 onClick={() => setInputType('age')}
                 className={`px-4 py-2 rounded-md transition-colors duration-200 ${
                   inputType === 'age'
-                    ? 'bg-purple-600 text-white'
-                    : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
+                    ? 'bg-yellow-500 dark:bg-yellow-400 text-white'
+                    : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                 }`}
               >
                 Age
@@ -153,7 +153,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                 >
-                  <label htmlFor="birthDate" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="birthDate" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Enter your date of birth
                   </label>
                   <input
@@ -161,7 +161,7 @@ export default function Home() {
                     id="birthDate"
                     value={birthDate}
                     onChange={(e) => setBirthDate(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-yellow-500 dark:focus:ring-yellow-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     required
                   />
                 </motion.div>
@@ -172,7 +172,7 @@ export default function Home() {
                   animate={{ opacity: 1, y: 0 }}
                   exit={{ opacity: 0, y: -20 }}
                 >
-                  <label htmlFor="age" className="block text-sm font-medium text-gray-700 mb-2">
+                  <label htmlFor="age" className="block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2">
                     Enter your age
                   </label>
                   <input
@@ -182,7 +182,7 @@ export default function Home() {
                     max="72"
                     value={age}
                     onChange={(e) => setAge(e.target.value)}
-                    className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:border-transparent"
+                    className="w-full px-4 py-2 border border-gray-300 dark:border-gray-600 rounded-md focus:ring-2 focus:ring-yellow-500 dark:focus:ring-yellow-400 focus:border-transparent bg-white dark:bg-gray-700 text-gray-900 dark:text-white"
                     required
                   />
                 </motion.div>
@@ -193,7 +193,7 @@ export default function Home() {
           <div className="flex space-x-4">
             <button
               type="submit"
-              className="flex-1 bg-purple-600 text-white py-2 px-4 rounded-md hover:bg-purple-700 transition-colors duration-200"
+              className="flex-1 bg-yellow-500 dark:bg-yellow-400 text-white py-2 px-4 rounded-md hover:bg-yellow-600 dark:hover:bg-yellow-500 transition-colors duration-200"
             >
               Calculate
             </button>
@@ -215,19 +215,19 @@ export default function Home() {
               exit={{ opacity: 0, y: -20 }}
               className="space-y-6"
             >
-              <div className="bg-white rounded-lg shadow-xl p-6">
-                <blockquote className="text-xl italic text-gray-700 mb-6">
+              <div className="bg-white dark:bg-gray-800 rounded-lg shadow-xl p-4 sm:p-6 md:p-8">
+                <blockquote className="text-base sm:text-lg md:text-xl italic text-gray-700 dark:text-gray-300 mb-6 text-center">
                   &ldquo;{quote}&rdquo;
                 </blockquote>
 
                 <div className="mb-6">
                   <div className="flex justify-between mb-2">
-                    <span className="text-sm font-medium text-gray-700">Life Progress</span>
-                    <span className="text-sm font-medium text-gray-700">{Math.round(stats.lifePercentage)}%</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">Life Progress</span>
+                    <span className="text-sm font-medium text-gray-700 dark:text-gray-300">{Math.round(stats.lifePercentage)}%</span>
                   </div>
-                  <div className="w-full bg-gray-200 rounded-full h-2.5">
+                  <div className="w-full bg-gray-200 dark:bg-gray-700 rounded-full h-2.5">
                     <motion.div
-                      className="bg-purple-600 h-2.5 rounded-full"
+                      className="bg-yellow-500 dark:bg-yellow-400 h-2.5 rounded-full"
                       initial={{ width: 0 }}
                       animate={{ width: `${stats.lifePercentage}%` }}
                       transition={{ duration: 1, ease: "easeOut" }}
@@ -236,59 +236,51 @@ export default function Home() {
                 </div>
 
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-6">
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <h3 className="text-lg font-semibold text-purple-900">Age</h3>
-                    <p className="text-2xl font-bold text-purple-600">{stats.age} years</p>
+                  <div className="bg-yellow-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-yellow-900 dark:text-yellow-400 mb-2">Age</h3>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-600 dark:text-yellow-500">{stats.age} years</p>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <h3 className="text-lg font-semibold text-purple-900">Days Lived</h3>
-                    <p className="text-2xl font-bold text-purple-600">{formatNumber(stats.daysLived)}</p>
+                  <div className="bg-yellow-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-yellow-900 dark:text-yellow-400 mb-2">Days Lived</h3>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-600 dark:text-yellow-500">{formatNumber(stats.daysLived)}</p>
                   </div>
-                  <div className="bg-purple-50 p-4 rounded-lg">
-                    <h3 className="text-lg font-semibold text-purple-900">Remaining</h3>
-                    <p className="text-2xl font-bold text-purple-600">{formatNumber(stats.remainingDays)}</p>
+                  <div className="bg-yellow-50 dark:bg-gray-700 p-4 rounded-lg">
+                    <h3 className="text-base sm:text-lg md:text-xl font-semibold text-yellow-900 dark:text-yellow-400 mb-2">Remaining</h3>
+                    <p className="text-xl sm:text-2xl md:text-3xl font-bold text-yellow-600 dark:text-yellow-500">{formatNumber(stats.remainingDays)}</p>
                   </div>
                 </div>
 
                 <div className="flex space-x-4 mb-4">
                   <button
                     onClick={() => setViewMode('days')}
-                    className={`px-4 py-2 rounded-md ${
+                    className={`flex-1 py-2 px-4 rounded-md transition-colors duration-200 ${
                       viewMode === 'days'
-                        ? 'bg-purple-600 text-white'
-                        : 'bg-gray-200 text-gray-700'
+                        ? 'bg-yellow-500 dark:bg-yellow-400 text-white'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                     }`}
                   >
                     Days
                   </button>
                   <button
                     onClick={() => setViewMode('weeks')}
-                    className={`px-4 py-2 rounded-md ${
+                    className={`flex-1 py-2 px-4 rounded-md transition-colors duration-200 ${
                       viewMode === 'weeks'
-                        ? 'bg-purple-600 text-white'
-                        : 'bg-gray-200 text-gray-700'
+                        ? 'bg-yellow-500 dark:bg-yellow-400 text-white'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                     }`}
                   >
                     Weeks
                   </button>
                   <button
                     onClick={() => setViewMode('months')}
-                    className={`px-4 py-2 rounded-md ${
+                    className={`flex-1 py-2 px-4 rounded-md transition-colors duration-200 ${
                       viewMode === 'months'
-                        ? 'bg-purple-600 text-white'
-                        : 'bg-gray-200 text-gray-700'
+                        ? 'bg-yellow-500 dark:bg-yellow-400 text-white'
+                        : 'bg-gray-200 dark:bg-gray-700 text-gray-700 dark:text-gray-300 hover:bg-gray-300 dark:hover:bg-gray-600'
                     }`}
                   >
                     Months
                   </button>
-                </div>
-
-                <div className="text-center">
-                  <p className="text-2xl font-bold text-purple-900">
-                    {viewMode === 'days' && `${formatNumber(stats.remainingDays)} days remaining`}
-                    {viewMode === 'weeks' && `${formatNumber(stats.remainingWeeks)} weeks remaining`}
-                    {viewMode === 'months' && `${formatNumber(stats.remainingMonths)} months remaining`}
-                  </p>
                 </div>
               </div>
             </motion.div>
